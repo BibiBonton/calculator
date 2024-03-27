@@ -1,10 +1,21 @@
 
 function addToScreen(value) {
+    let display = document.getElementById('display');
+    let operators = ['+', '-', 'x', '/'];
+
     if (value === 'AC') {
-        document.getElementById('display').value = '';
+        return display.value = '';
     } else if (value === '=') {
-        calculateResult();
+        return calculateResult();
+    } else if (operators.includes(value)) {
+        let currentValue = display.value;
+
+        if (operators.includes(currentValue[currentValue.length - 1])) {
+            display.value = currentValue.slice(0, -1) + value;
+        } else {
+            display.value += value;
+        }
     } else {
-        document.getElementById('display').value += value;
+        display.value += value;
     }
 }
