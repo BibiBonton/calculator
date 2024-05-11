@@ -1,14 +1,11 @@
 
-function addToScreen(value) {
-    let display = document.getElementById('display');
-    let operators = ['+', '-', 'x', '/'];
+const display = document.getElementById('display');
 
-    if (value === 'AC') {
-        return display.value = '';
-    } else if (value === '=') {
-        return calculateResult();
-    } else if (operators.includes(value)) {
-        let currentValue = display.value;
+function addToScreen(value) {
+    const operators = ['+', '-', '*', '/'];
+
+    if (operators.includes(value)) {
+        const currentValue = display.value;
 
         if (operators.includes(currentValue[currentValue.length - 1])) {
             display.value = currentValue.slice(0, -1) + value;
@@ -18,4 +15,12 @@ function addToScreen(value) {
     } else {
         display.value += value;
     }
+}
+
+function calculateResult() {
+    display.value = eva; (display.value);
+}
+
+function reset() {
+    display.value = '0'
 }
