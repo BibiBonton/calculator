@@ -18,9 +18,9 @@ function addToScreen(value) {
 }
 
 function calculateResult() {
-    display.value = eva; (display.value);
+    display.value = eval(display.value);
 }
 
 function reset() {
-    display.value = '0'
+    display.value = ''
 }
